@@ -1,65 +1,62 @@
-// this is a test
-/**
- * SYST 17796 Project Summer 2019 Base code.
- * Students can modify and extend to implement their game.
- * Add your name as a modifier and the date!
- */
 package project;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * The class that models your game. You should create a more specific
  * child of this class and instantiate the methods given.
- * @author megha,2019
+ *
+ * @author Abdul Liban
+ * @author Aman Singh
+ * @author Elven Dawood
+ * @author Connor Murray
  */
-public abstract class Game 
+public abstract class Game
 {
-    private final String gameName;//the title of the game
-    private ArrayList <Player> players;// the players of the game
-    
-    public Game(String givenName)
-    {
-        gameName = givenName;
-        players = new ArrayList();
-    }
 
-    /**
-     * @return the gameName
-     */
-    public String getGameName() 
-    {
-        return gameName;
-    }
-    
-     /**
-     * @return the players of this game
-     */
-    public ArrayList <Player> getPlayers() 
-    {
-        return players;
-    }
+   private final String gameName;
+   /**
+    * the title of the game
+    */
+   private Collection<Player> players;
 
-    /**
-     * @param players the players of this game
-     */
-    public void setPlayers(ArrayList <Player> players) 
-    {
-        this.players = players;
-    }
-    
-    /**
-     * Play the game. This might be one method or many method calls depending
-     * on your game.
-     */
-    public abstract void play();
-    
-    /**
-     * When the game is over, use this method to declare and display a winning
-     * player.
-     */
-    public abstract void declareWinner();
+   public String getGameName ()
+   {
+      return this.gameName;
+   }
 
-   
-    
-}//end class
+   public Collection<Player> getPlayers ()
+   {
+      return this.players;
+   }
+
+   public void setPlayers (Collection<Player> players)
+   {
+      this.players = players;
+   }
+
+   /**
+    * the players of the game
+    *
+    * @param givenName
+    */
+   public Game (String givenName)
+   {
+      this.gameName = givenName;
+   }
+
+   /**
+    * Play the game. This might be one method or many
+    * <p>
+    * method calls depending
+    * on your game.
+    */
+   public abstract void play ();
+
+   /**
+    * When the game is over, use this method to declare and display a winning
+    * player.
+    */
+   public abstract void declareWinner ();
+
+}
